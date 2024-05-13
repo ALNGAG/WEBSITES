@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Website</title>
+    <style> body {
+       width: 100%;
+        height: 100%;
+        margin: 0 auto; 
+        padding: 20px; 
+        box-sizing: border-box; 
+        text-align: justify;
+        text-justify: inter-word;
+        background: linear-gradient(
+            to top, 
+            white 0%,
+            gray 50%,
+            gray 50%,
+            gray 100%
+        );
+    }
+    .Artsaying{
+        display: inline-block;
+    }
+    .Artsaying p {
+        width: 300px;
+    }
+    .scrollmenu {
+    width: 100%;
+    height: 500px;
+    overflow-x: auto;
+    white-space: nowrap; 
+    display: inline-block;
+  }
+  .scrollmenu img {
+    max-width: 100%;
+    max-height: 100%;
+    margin-bottom: 10px;
+  }
+    .searchitem {
+        width: 30px;
+        height: 30px;
+        padding: 14px 16px;
+    }
+   
+    .logo {
+        width: 70px;
+        height: 70px;
+        padding: 14px 16px;
+    }
+footer {
+  overflow: hidden;
+  background-color: black;
+  display: block;
+}
+footer a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+footer a:hover {
+  background-color: black;
+  color: white;
+}
+.topnav {
+        overflow: hidden;
+        background-color: white;
+      }
+      .topnav a {
+        float: left;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+      .topnav a:hover{
+        background-color: black;
+        color: white;
+      }
+      .design {
+            float: left;
+            width: 25%;
+            height: 180px;
+        }
+ 
+      .design1{
+            float: left;
+            width: 50%;
+            height: 180px;
+        }
+ 
+      .design2 {
+            float: right;
+            width: 25%;
+            height: 180px;
+        }
+        .imgbutton {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px; 
+    height: 100px; 
+    cursor: pointer;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+    <div class="design">
+        <div style="float:left;">
+            <img class="logo" src="Black and White Minimalist Professional Initial Logo.png">
+        </div>
+        <div style="float:left;">
+            <p>
+            Post Unlimited <br><br>Look Unlimited
+            </p>
+        </div>
+    </div>
+    <div class="design1">
+        <div class="topnav">
+            <a style="text-decoration: none;" href="Index.html">Home</a>
+            <a style="text-decoration: none;" href="contact.html">Contact</a>
+            <a style="text-decoration: none;" href="How to use.html">About The Website</a>
+        </div>
+      </div>
+      <div class="design2"> 
+        <button onclick="window.location.href='https://mail.google.com/'"><img class="searchitem" src="signin.png"> </button> 
+      </div>
+
+        <p>Highlight</p>
+      
+        <h1 class="Artsaying"> Art Work Series</h1>
+        <p class="Artsaying"> Post Your Art!</p>
+
+        <div class="scrollmenu" id="imageContainer">
+           
+        </div>
+
+        <input type="file" id="file-upload" accept="image/*" onchange="submit(event)" style="display: none;">
+        
+        <div class="imgbutton" onclick="document.getElementById('file-upload').click()" >
+          <center><img class="imgbutton" src="addbutoon.png" alt="Image of Button"></center>
+        </div>
+        
+
+        <script>
+          function submit(event){
+            var input = document.getElementById('file-upload');
+            var container = document.getElementById('imageContainer');
+          
+            if (input.files && input.files[0]) {
+              var reader = new FileReader();
+              reader.onload = function(e) {
+                var img = document.createElement('img');
+                img.src = e.target.result;
+                container.appendChild(img);
+              }
+              reader.readAsDataURL(input.files[0]);
+            }
+          }
+          </script>
+
+        <footer>
+          <div>
+            <center> 
+              <p style="color:white">© [2024] – [2024], [Randolf S. Alngag Jr.] | All Rights Reserved</p>
+        </center>
+          </div>
+        </footer>
+</body>
+</html>
